@@ -19,3 +19,5 @@ There are also two columns; _max_glu_serum_ and _A1Cresult_ which contain explic
 From the heatmap, we have deducted, that the numerical data might be heavily irrelevant, we'll be picking out a handful of them, however we will mainly be focusing on the drugs taken and the amount of procedures taken.
 
 Our goal will be to binary classify patients, based upon if the treatment was succesfull. We will be looking at the drugs taken, number of procedures and diagnosses to access, if the patient can be let out. Our main hurdle will be in handling sensitive data and filling up the missing data with something. We propose to delete any sensitive data marked with a "?" and claddify each record in the drug columns to find out if the patient can succesfully be discharged.
+
+According to the lecturer's note, we inspected the _readmitted_ column, finding that it contains three values: (<30, >30, NO). All of these values have enough representation to be relevant, however we'll have to scale the weights of <30, since NO has 5x more instances, than it.
