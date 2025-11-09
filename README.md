@@ -29,7 +29,7 @@ Using a simple encoder, we represented the four values in the drugs columns (Up,
 
 During our presentation we notices severe under perfomance form our neural network, thus we decided to drop any drug columns with only a NO value and compared their correlation. None of the drugs correlated hugely together, meaning we had to use as much of them s apossible. We also found out, that the data isn't scaled properly, so we applied a scaler on it.
 
-# ADD COMMENT ABOUT SMOTE
-
+### ABOUT SMOTE
+We used SMOTE because we couldn't *weave* NN that would perform well enough without it. For long "**Synthetic Minority Over-sampling Technique**" is a technique that synthetically generates new samples by interpolating between existing samples of the minority class. It basically works like nearest-neighbour algorithm where it selects a few random neighbours then for each selected neighbor it creates a new synthetic point that lies on the line segment between the original sample and its neighbor. 
 ## 3. ASSEMBLING THE NEURAL NETWORK
 We decided to opt for ReLU, because we are working with simple numerical data (both the drug columns and readmitted use a simple encoding) and at the end we use a sigmoid to determine the binary classification. Adam and Cross Entropy were chosen after running the experiment a number of times. We also added a stopper function, which will stop the Neural Network after not being able to learn better, then in the last three epochs, making sure it stops before getiing overfitted.
